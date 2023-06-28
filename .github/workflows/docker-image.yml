@@ -17,6 +17,7 @@ jobs:
       run: |
         chmox +x generate_dockerfile.sh
         ./generate_dockerfile.sh
+        cat Dockerfile
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
