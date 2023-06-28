@@ -24,4 +24,4 @@ jobs:
         tags: |
           itodouble/frp:latest
           itodouble/frp:$(date +%s)
-          itodouble/frp:${GITHUB_REF_NAME}
+          itodouble/frp:${{ GITHUB_REF_NAME }}
