@@ -1,8 +1,8 @@
 FROM alpine:3
 LABEL email="itodouble@outlook.com"
 
-ARG FRP_VERSION=0.50.0
-## ARG FRP_VERSION=${GITHUB_REF_NAME}
+## ARG FRP_VERSION=0.50.0
+ARG FRP_VERSION=${GITHUB_REF_NAME}
 ARG URL=https://github.com/fatedier/frp/releases/download/v${FRP_VERSION}/frp_${FRP_VERSION}_linux_amd64.tar.gz
 
 ## /usr/bin/{frps, frpc} -c xxx.ini
