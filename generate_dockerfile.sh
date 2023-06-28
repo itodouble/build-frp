@@ -1,7 +1,8 @@
 bash
 
 while read line;do  
-    eval "$line"  
+    eval "$line"
+    echo "$line"
 done < config.propertis
 echo ${GITHUB_REF_NAME}
 echo ${{GITHUB_REF_NAME}}
