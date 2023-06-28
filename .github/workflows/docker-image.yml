@@ -15,7 +15,7 @@ jobs:
         echo "github: ${{ toJSON(github) }}"
     - name: 构建Dockerfile
       run: |
-        chmox +x generate_dockerfile.sh
+        chmod +x generate_dockerfile.sh
         ./generate_dockerfile.sh
         cat Dockerfile
     - name: Login to Docker hub
