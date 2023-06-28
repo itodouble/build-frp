@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+    - name: 获取参数
+      run: |
+        echo "github: ${{ toJSON(github) }}"
+        
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
