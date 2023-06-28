@@ -10,8 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set env variable  
-      run: echo "GITHUB_REF_SLUG=${GITHUB_REF_NAME//\//-}" >> $GITHUB_ENV
+    - name: Set env variable
+      run: echo "GITHUB_REF_SLUG=${github.ref//\//-}" >> $GITHUB_ENV
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
