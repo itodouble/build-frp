@@ -1,5 +1,7 @@
 # frp-build
-frp docker 构建
+
+https://github.com/fatedier/frp docker 构建
+
 使用方式
 ```
 docker pull itodouble/frp:latest
@@ -22,3 +24,5 @@ docker run -d \
     -v /config/:/config/ \
     itodouble/frp
 ```
+
+更多使用技巧参考https://gofrp.org/docs/
