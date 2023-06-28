@@ -11,7 +11,7 @@ docker pull itodouble/frp:latest
 docker run -d \
     -e "ARGS=frps" \
     -e "CONFIG_FILE=frps.ini" \
-    -v /config/:/config/ \
+    -v /data/frp/config/:/config/ \
     --net host \
     itodouble/frp
 ```
@@ -21,7 +21,7 @@ docker run -d \
 docker run -d \
     -e "ARGS=frpc" \
     -e "CONFIG_FILE=frpc.ini"
-    -v /config/:/config/ \
+    -v /data/frp/config/:/config/ \
     itodouble/frp
 ```
 
