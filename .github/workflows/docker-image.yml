@@ -11,7 +11,9 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Set env variable
-      run: echo "GITHUB_REF_SLUG=${github.ref//\//-}" >> $GITHUB_ENV
+      run: |
+        echo "github: ${{toJSON(github)}}"
+        echo "GITHUB_REF_SLUG=${(github.ref)//\//-}"
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
