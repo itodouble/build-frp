@@ -1,6 +1,7 @@
 name: Docker Image CI
 
 on:
+  workflow_dispatch:
   push:
     tags: "*"
 
@@ -23,3 +24,4 @@ jobs:
         tags: |
           itodouble/frp:latest
           itodouble/frp:$(date +%s)
+          itodouble/frp:${GITHUB_REF_NAME}
