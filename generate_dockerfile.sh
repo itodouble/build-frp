@@ -1,5 +1,9 @@
 bash
 
+while read line;do  
+    eval "$line"  
+done < config.propertis
+
 echo "FROM alpine:3" > Dockerfile
 echo "LABEL email=\"itodouble@outlook.com\"" >> Dockerfile
 echo "" >> Dockerfile
