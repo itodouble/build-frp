@@ -10,10 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: Set env variable
-      run: |
-        echo "github: ${{github.ref_name}}"
-
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
