@@ -3,7 +3,7 @@ bash
 echo "FROM alpine:3" > Dockerfile
 echo "LABEL email=\"itodouble@outlook.com\"" >> Dockerfile
 echo "" >> Dockerfile
-echo "ARG FRP_VERSION="${{github.ref_name}} >> Dockerfile
+echo "ARG FRP_VERSION="${{GITHUB_REF_NAME}} >> Dockerfile
 echo "ARG URL=https://github.com/fatedier/frp/releases/download/v\${FRP_VERSION}/frp_\${FRP_VERSION}_linux_amd64.tar.gz" >> Dockerfile
 echo "" >> Dockerfile
 echo "## /usr/bin/{frps, frpc} -c xxx.ini" >> Dockerfile
