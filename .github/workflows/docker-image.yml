@@ -12,7 +12,6 @@ jobs:
     - uses: actions/checkout@v3
     - name: 获取参数
       run: |
-        echo "github: ${{ toJSON(github) }}"
         echo "GITHUB_REF_NAME=${{github.ref_name}}" > config.propertis
     - name: 构建Dockerfile
       run: |
