@@ -24,3 +24,5 @@ jobs:
         tags: |
           itodouble/frp:latest
           itodouble/frp:${{github.ref_name}}
+        args: |
+          -e GITHUB_REF_NAME=${{github.ref_name}}
