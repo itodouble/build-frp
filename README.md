@@ -26,3 +26,6 @@ docker run -d \
 ```
 
 更多使用技巧参考https://gofrp.org/docs/
+
+## 说明
+打标签触发`action` 在`action`中将版本写入`config.properties`文件 执行`generate_dockerfile.sh`生成`Dockerfile`然后推送到hub.docker.com
