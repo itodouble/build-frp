@@ -2,7 +2,7 @@ bash
 
 while read line;do  
     eval "$line"
-已完成 < config.propertis
+done < config.propertis
 
 echo "FROM alpine:3" > Dockerfile
 echo "LABEL email=\"itodouble@outlook.com\"" >> Dockerfile
@@ -19,6 +19,11 @@ echo "    && mv frp_*/frpc /usr/bin/ \\" >> Dockerfile
 echo "    && mv frp_*/frps /usr/bin/ \\" >> Dockerfile
 echo "    && mv frp_*/*.ini /config/ \\" >> Dockerfile
 echo "    && rm /frp -rf" >> Dockerfile
+
 echo "VOLUME /config" >> Dockerfile
-echo "ENV ARGS=frps CONFIG_FILE=frps.ini" >> Dockerfile
+
+echo "ENV ARGS frps" >> Dockerfile
+echo "ENV CONFIG_FILE frps.ini" >> Dockerfile
+echo "ENV TZ Asia/Shanghai" >> Dockerfile
+
 echo "CMD /usr/bin/\${ARGS} -c /config/\${CONFIG_FILE}" >> Dockerfile
