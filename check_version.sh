@@ -3,5 +3,5 @@ DOCKER_IMAGE_INFO=$(curl -s https://hub.docker.com/v2/repositories/itodouble/frp
 echo ${DOCKER_IMAGE_INFO}
 DOCKER_LATEST_INFO=$(echo ${DOCKER_IMAGE_INFO} | jq '.results[1]')
 echo ${DOCKER_LATEST_INFO}
-DOCKER_VERSION=$(echo "$DOCKER_LATEST_INFO" | jq -r '.images[0].name')
+DOCKER_VERSION=$(echo "$DOCKER_LATEST_INFO" | jq -r '.name')
 echo $DOCKER_VERSION
