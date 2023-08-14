@@ -2,8 +2,8 @@ name: Docker Image CI
 
 on:
   workflow_dispatch:
-  push:
-    tags: "*"
+  schedule:
+    - cron: '0 0 * * *'
 
 jobs:
   docker:
@@ -16,7 +16,8 @@ jobs:
     - name: 生成Dockerfile文件
       run: |
         chmod +x generate_dockerfile.sh
-        ./generate_dockerfile.sh
+        chmod +x check_version.sh
+        ./check_version.sh
         cat Dockerfile
     - name: Login to Docker hub
       uses: docker/login-action@v2
