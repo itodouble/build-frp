@@ -17,5 +17,4 @@ jobs:
       run: |
         chmod +x generate_dockerfile.sh
         chmod +x check_version.sh
-        apt install curl wget jq -y
-        bash check_version.sh
+        ./check_version.sh
