@@ -7,5 +7,6 @@ FRP_VERSION=${FRP_VERSION_FULL#v}
 
 if [ ${FRP_VERSION} != ${DOCKER_VERSION} ]
 then
-	./generate_dockerfile.sh ${FRP_VERSION}
+    ./generate_dockerfile.sh ${FRP_VERSION}
+    
 fi
