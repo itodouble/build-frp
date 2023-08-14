@@ -17,7 +17,7 @@ jobs:
         ./check_version.sh
     - name: Substitute version
       id: get_frp_version
-      run: echo "::set-output name=FRP_VERSION::$(cat version.file)"
+      run: echo "::set-output name=version::$(cat version.file)"
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
@@ -26,7 +26,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v3
       env:
-        FRP_VERSION=${{ steps.get_frp_version.outputs.FRP_VERSION }}
+        FRP_VERSION=${{ steps.get_frp_version.outputs.version }}
       with:
         context: .
         platforms: linux/amd64
