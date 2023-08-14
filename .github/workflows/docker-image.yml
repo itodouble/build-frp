@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: 检出
     - name: 生成Dockerfile文件
       run: |
         chmod +x check_version.sh
