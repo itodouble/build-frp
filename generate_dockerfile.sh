@@ -1,6 +1,7 @@
 bash
 
 FRP_VERSION=$1
+echo "构建版本："${FRP_VERSION}
 
 echo "FROM alpine:3" > Dockerfile
 echo "LABEL email=\"itodouble@outlook.com\"" >> Dockerfile
