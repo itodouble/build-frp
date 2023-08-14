@@ -15,6 +15,4 @@ jobs:
         echo "GITHUB_REF_NAME=${{github.ref_name}}" > config.propertis
     - name: 生成Dockerfile文件
       run: |
-        chmod +x generate_dockerfile.sh
-        chmod +x check_version.sh
         ./check_version.sh
