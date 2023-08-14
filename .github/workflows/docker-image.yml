@@ -15,8 +15,10 @@ jobs:
         chmod +x check_version.sh
         chmod +x generate_dockerfile.sh
         ./check_version.sh
-        cat Dockerfile
+    - name: Substitute version
+      run: |
         FRP_VERSION=$(cat version.file)
+        sed -i "s/FRP_VERSION/$FRP_VERSION/g" docker-tags.txt
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
@@ -30,4 +32,4 @@ jobs:
         push: true
         tags: |
           itodouble/frp:latest
-          itodouble/frp:$(cat version.file)
+          itodouble/frp:${{ FRP_VERSION }}
