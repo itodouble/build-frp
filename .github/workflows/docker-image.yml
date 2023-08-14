@@ -30,6 +30,6 @@ jobs:
         push: true
         tags: |
           itodouble/frp:latest
-          itodouble/frp:${{FRP_VERSION}}
+          itodouble/frp:$(cat version.file)
         args: |
-          -e GITHUB_REF_NAME=${{FRP_VERSION}}
+          -e GITHUB_REF_NAME=$(cat version.file)
