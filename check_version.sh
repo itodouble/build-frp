@@ -1,5 +1,5 @@
 bash
-#
+
 #wget -O frp_latest.json  https://api.github.com/repos/fatedier/frp/releases/latest
 
 #FRP_VERSION_FULL=`curl --silent "https://api.github.com/repos/fatedier/frp/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'`
