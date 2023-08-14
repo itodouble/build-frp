@@ -19,6 +19,7 @@ jobs:
         chmod +x generate_dockerfile.sh
         ./check_version.sh
         cat Dockerfile
+        FRP_VERSION=$(cat FRP_VERSION)
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
