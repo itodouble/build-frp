@@ -31,5 +31,3 @@ jobs:
         tags: |
           itodouble/frp:latest
           itodouble/frp:$(cat version.file)
-        args: |
-          -e GITHUB_REF_NAME=$(cat version.file)
