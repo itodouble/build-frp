@@ -1,4 +1,4 @@
-#!/bin/bash
+bash
 #
 #wget -O frp_latest.json  https://api.github.com/repos/fatedier/frp/releases/latest
 
