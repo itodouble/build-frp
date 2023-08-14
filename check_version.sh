@@ -1,7 +1,5 @@
 bash
-DOCKER_IMAGE_INFO=$(curl -s https://hub.docker.com/v2/repositories/itodouble/frp/tags/)
-echo ${DOCKER_IMAGE_INFO}
-DOCKER_LATEST_INFO=$(echo ${DOCKER_IMAGE_INFO} | jq '.results[1]')
-echo ${DOCKER_LATEST_INFO}
-DOCKER_VERSION=$(echo "$DOCKER_LATEST_INFO" | jq -r '.name')
+FRP_DOCKER_TAGS_URL=https://hub.docker.com/v2/repositories/itodouble/frp/tags
+DOCKER_VERSION=$(curl -s $FRP_DOCKER_TAGS_URL | jq -r '.results[1].name')
+
 echo $DOCKER_VERSION
