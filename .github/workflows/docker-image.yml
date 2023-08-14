@@ -28,7 +28,7 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v3
       env:
-        FRP_VERSION=${{ env.frp_version }}
+        FRP_VERSION: ${{ env.frp_version }}
       with:
         context: .
         platforms: linux/amd64
