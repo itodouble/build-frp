@@ -5,7 +5,7 @@ DOCKER_VERSION=$(curl -s $FRP_DOCKER_TAGS_URL | jq -r '.results[1].name')
 FRP_VERSION_FULL=`curl --silent "https://api.github.com/repos/fatedier/frp/releases/latest" | grep '"tag_name":' | sed -E 's/.*"([^"]+)".*/\1/'`
 FRP_VERSION=${FRP_VERSION_FULL#v}
 GITHUB_REF_NAME=${FRP_VERSION}
-echo ${FRP_VERSION} > FRP_VERSION
+echo ${FRP_VERSION} > version.file
 if [ ${FRP_VERSION} != ${DOCKER_VERSION} ]
 then
     echo "构建版本："${FRP_VERSION}
