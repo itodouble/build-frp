@@ -1,5 +1,5 @@
 # frp-build
-[Docker Image Version (latest semver)](https://img.shields.io/docker/v/itodouble/frp?sort=semver)
+![Docker Image Version (latest semver)](https://img.shields.io/docker/v/itodouble/frp?sort=semver)
 
 https://github.com/fatedier/frp docker 构建!
 
