@@ -32,4 +32,4 @@ jobs:
         push: true
         tags: |
           itodouble/frp:latest
-          itodouble/frp:${{ FRP_VERSION }}
+          itodouble/frp:$FRP_VERSION
