@@ -10,9 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
-    - name: 获取参数
-      run: |
-        echo "GITHUB_REF_NAME=${{github.ref_name}}" > config.propertis
+    - name: 检出
     - name: 生成Dockerfile文件
       run: |
         chmod +x check_version.sh
