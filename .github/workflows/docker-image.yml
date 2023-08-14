@@ -16,9 +16,8 @@ jobs:
         chmod +x generate_dockerfile.sh
         ./check_version.sh
     - name: Substitute version
-      run: |
-        FRP_VERSION=$(cat version.file)
-        sed -i "s/FRP_VERSION/$FRP_VERSION/g" docker-tags.txt
+      id: get_frp_version
+      run: echo "::set-output name=FRP_VERSION::$(cat version.file)"
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
@@ -26,6 +25,8 @@ jobs:
         password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Build and push
       uses: docker/build-push-action@v3
+      env:
+        FRP_VERSION=${{ steps.get_frp_version.outputs.FRP_VERSION }}
       with:
         context: .
         platforms: linux/amd64
