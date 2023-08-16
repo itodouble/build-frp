@@ -14,11 +14,21 @@ jobs:
       run: |
         chmod +x check_version.sh
         ./check_version.sh
+    - name: check dockerfile
+      id: dockerfile_check
+      uses: andstor/file-existence-action@v1
+      with:
+         files: "Dockerfile"
+    - name: 如果没有生成dockerfile提前结束工作流
+      if: steps.dockerfile_check.outputs.filesExists != 'true' 
+      uses: actions/github-script@v6
+      with:
+        script: |
+          core.setFailed('Dockerfile not found')
     - name: Substitute version
       id: get_frp_version
       run: |
         echo "frp_version=$(cat version.file)" >> $GITHUB_ENV
-        echo 'fff'${frp_version}
     - name: Login to Docker hub
       uses: docker/login-action@v2
       with:
