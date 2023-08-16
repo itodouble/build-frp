@@ -13,7 +13,6 @@ jobs:
     - name: 生成Dockerfile文件
       run: |
         chmod +x check_version.sh
-        chmod +x generate_dockerfile.sh
         ./check_version.sh
     - name: Substitute version
       id: get_frp_version
