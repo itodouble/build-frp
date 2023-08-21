@@ -24,7 +24,7 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          core.setFailed('没有生成dockerfile提前结束工作流')
+          core.exit('没有生成dockerfile提前结束工作流')
     - name: Substitute version
       id: get_frp_version
       run: |
