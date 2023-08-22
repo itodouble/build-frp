@@ -24,7 +24,7 @@ jobs:
       uses: actions/github-script@v6
       with:
         script: |
-          exit 0
+          exit
     - name: Substitute version
       id: get_frp_version
       run: |
