@@ -16,15 +16,15 @@ jobs:
         ./check_version.sh
     - name: check dockerfile
       id: dockerfile_check
-      uses: andstor/file-existence-action@v1
+      uses: andstor/file-existence-action@v2.0.0
       with:
          files: "Dockerfile"
     - name: 输出结果
       run: |
-        echo "${{ steps.dockerfile_check.outputs.filesExists }}"
+        echo "${{ steps.dockerfile_check.outputs }}"
     - name: 如果没有生成dockerfile提前结束工作流
       id: check_stop_flow
-      if: ${{ steps.dockerfile_check.outputs.filesExists == 'false' }}
+      if: ${{ steps.dockerfile_check.outputs.files_exists == 'false' }}
       run: exit 0
     - name: Substitute version
       id: get_frp_version
