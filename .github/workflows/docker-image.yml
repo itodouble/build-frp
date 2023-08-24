@@ -21,8 +21,8 @@ jobs:
          files: "Dockerfile"
     - name: 如果没有生成dockerfile提前结束工作流
       id: check_stop_flow
+      uses: styfle/cancel-workflow-action@0.11
       if: steps.dockerfile_check.outputs.filesExists != 'true' 
-      run: exit 0
     - name: Substitute version
       id: get_frp_version
       run: |
