@@ -24,8 +24,9 @@ jobs:
         echo ${{ steps.dockerfile_check.outputs }}
     - name: 如果没有生成dockerfile提前结束工作流
       id: check_stop_flow
-      uses: styfle/cancel-workflow-action@0.11.0
       if: ${{ steps.dockerfile_check.outputs.files_exists == 'false' }}
+      run: |
+        core.setFailed("当前版本已经存在 不生成新的")
     - name: Substitute version
       id: get_frp_version
       run: |
