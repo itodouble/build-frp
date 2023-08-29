@@ -26,7 +26,8 @@ jobs:
       id: check_stop_flow
       if: ${{ steps.dockerfile_check.outputs.files_exists == 'false' }}
       run: |
-        core.setFailed("当前版本已经存在 不生成新的")
+        //core.setFailed("当前版本已经存在 不生成新的")
+        process.exit(0)
     - name: Substitute version
       id: get_frp_version
       run: |
