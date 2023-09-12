@@ -1,0 +1,25 @@
+name: Trigger Build on Release
+
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Create Dispatch Event
+        id: trigger_ariang
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.PAT }} # Personal Access Token with repo scope
+          branch: trigger-release
+          title: Trigger Build for Release
+          body: |
+            {
+              "repository": "mayswind/AriaNg",
+              "release_version": "${{ github.event.release.tag_name }}"
+            }
+          labels: trigger-build
