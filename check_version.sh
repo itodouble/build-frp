@@ -23,13 +23,13 @@ then
     echo "    && wget -qO- \${URL} | tar xz \\" >> Dockerfile
     echo "    && mv frp_*/frpc /usr/bin/ \\" >> Dockerfile
     echo "    && mv frp_*/frps /usr/bin/ \\" >> Dockerfile
-    echo "    && mv frp_*/*.ini /config/ \\" >> Dockerfile
+    echo "    && mv frp_*/*.toml /config/ \\" >> Dockerfile
     echo "    && rm /frp -rf" >> Dockerfile
     
     echo "VOLUME /config" >> Dockerfile
     
     echo "ENV ARGS frps" >> Dockerfile
-    echo "ENV CONFIG_FILE frps.ini" >> Dockerfile
+    echo "ENV CONFIG_FILE frps.toml" >> Dockerfile
     echo "ENV TZ Asia/Shanghai" >> Dockerfile
     
     echo "CMD /usr/bin/\${ARGS} -c /config/\${CONFIG_FILE}" >> Dockerfile
